@@ -1,7 +1,7 @@
 FROM hurricane/dockergui:x11rdp
 #FROM hurricane/dockergui:xvnc
 
-MAINTAINER David Coppit <david@coppit.org>
+MAINTAINER kennyparsons
 
 ENV APP_NAME="Filebot" WIDTH=1280 HEIGHT=720 TERM=xterm
 
@@ -98,7 +98,7 @@ ln -s /var/lib/tomcat7/shared /usr/share/tomcat7/shared && \
 # To find the latest version: https://www.filebot.net/download.php?mode=s&type=deb&arch=amd64
 # We'll use a specific version for reproducible builds
 wget --no-check-certificate -q -O /files/filebot.deb \
-  'https://sourceforge.net/projects/filebot/files/filebot/FileBot_4.7.9/filebot_4.7.9_amd64.deb' && \
+  'https://public.files.kennyparsons.com/files/apps/filebot_4.7.7_amd64.deb' && \
 dpkg -i /files/filebot.deb && rm /files/filebot.deb && \
 
 # Otherwise RDP rendering of the UI doesn't work right.
